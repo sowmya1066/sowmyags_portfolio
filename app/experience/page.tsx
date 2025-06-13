@@ -1,54 +1,61 @@
-"use client"
-import { useState, useEffect } from "react"
-import dynamic from "next/dynamic"
-import { Briefcase } from "lucide-react"
+"use client";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import { Card, CardContent } from "@/components/ui/card";
+import { Briefcase } from "lucide-react";
 // Dynamically import Particles to avoid SSR issues
-const Particles = dynamic(() => import("react-particles").then((mod) => mod.default), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-[#CA054D]/10" />,
-})
+const Particles = dynamic(
+  () => import("react-particles").then((mod) => mod.default),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-[#CA054D]/10" />
+    ),
+  }
+);
 
 const experiences = [
   {
     title: "Software Engineer",
     company: "Appiness Interactive",
-    period: "September 2022 - Present",
+    period: "September 2024 - Present",
     description:
-      "Worked on TMS, FRS sizing, and VMS Dashboard projects, building dashboards for traffic monitoring, facial recognition, and video management. Focused on real-time data visualization, event handling, and seamless camera integration, server selection",
+      "I specialize in building real-time monitoring dashboards for traffic surveillance, facial recognition, and video management, focusing on event visualization, live camera integration, and seamless data handling. Using React, Next.js, TypeScript, JavaScript, Python and styling tools like Shadcn, Chakra UI and Tailwind. Developed real-time event updates via WebSockets and REST APIs. I implemented shift-based event tracking with drilldown charts, allowing users to explore detailed traffic and security events for each shift. Integrated logic to calculate storage and hardware requirements based on camera type, recording duration, and environment. My work also includes handling live RTSP/HLS streams, dynamic server selection, and real-time alert scrolling systems for continuous event updates. I improved search efficiency by 10% in traffic violation lookups through optimized filtering logic and backend queries. Across all projects, I focused on combining visual clarity, functional depth, and performance optimization to deliver seamless user experiences.",
   },
   {
     title: "Junior Software Engineer",
     company: "Indegene",
-    period: "July 2022 - September 2022",
+    period: "July 2022 - September 2024",
     description:
-      "Developed dynamic web pages for BI.com, ensuring a optimal user experience. Contributed to the Career Website Development project, collaborating on the Page-As-A-Service (PaaS) feature for efficient page creation. Enhanced functionality by integrating Taleo API with SuccessFactors and supporting job posting and candidate synchronization.",
+      "Developed dynamic web pages for BI.com, ensuring a optimal user experience. Collaborated on the Page-As-A-Service (PaaS) feature, which enabled business users to quickly create and manage web pages with minimal technical intervention. A key part of my contribution was integrating the Taleo API with SAP SuccessFactors, automating job postings and ensuring seamless candidate data synchronization between the systems. This integration enhanced the overall recruitment process automation by reducing manual data handling and ensuring real-time updates.",
   },
   {
     title: "Program Analyst Trainee (Internship)",
     company: "Cognizant",
     period: "January 2022 - June 2022",
     description:
-      "Utilized advanced state management techniques to efficiently manage and update application state, enhancing overall performance. Streamlined data handling within React components to ensure smoother interactions and responsiveness. Applied best practices for managing complex application states, ensuring scalability and maintainability in React applications.",
+      "Worked on an eCommerce application, building dynamic product listing pages, category filters, and an interactive cart system using React. Applied advanced state management with Context API and Redux to efficiently handle large product data and user interactions. Streamlined data fetching and synchronization with backend services to ensure real-time updates. Focused on component reusability, performance optimization, and scalable architecture. Gained hands-on experience with SDLC , API integration, and state handling best practices.",
   },
-]
+];
 
 export default function Experience() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [particlesLoaded, setParticlesLoaded] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [particlesLoaded, setParticlesLoaded] = useState(false);
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener("mousemove", updateMousePosition)
-    return () => window.removeEventListener("mousemove", updateMousePosition)
-  }, [])
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", updateMousePosition);
+    return () => window.removeEventListener("mousemove", updateMousePosition);
+  }, []);
 
   const particlesInit = async (engine: any) => {
     // This is important to avoid runtime errors
-    await import("tsparticles-engine")
-    await import("tsparticles-slim").then((mod) => mod.loadSlim(engine))
-    setParticlesLoaded(true)
-  }
+    await import("tsparticles-engine");
+    await import("tsparticles-slim").then((mod) => mod.loadSlim(engine));
+    setParticlesLoaded(true);
+  };
 
   return (
     <div className="min-h-screen pt-20 p-8">
@@ -62,7 +69,7 @@ export default function Experience() {
                 value: "transparent",
               },
             },
-            fpsLimit: 60,
+            fpsLimit: 120,
             interactivity: {
               events: {
                 onClick: {
@@ -70,23 +77,18 @@ export default function Experience() {
                   mode: "push",
                 },
                 onHover: {
-                  enable: true,
-                  mode: "gentle",
-                  parallax: {
-                    enable: true,
-                    force: 10,
-                    smooth: 10,
-                  },
+                  enable: false,
+                  mode: "repulse",
                 },
                 resize: true,
               },
               modes: {
                 push: {
-                  quantity: 2,
+                  quantity: 4,
                 },
-                gentle: {
-                  radius: 100,
-                  factor: 3,
+                repulse: {
+                  distance: 200,
+                  duration: 0.4,
                 },
               },
             },
@@ -98,7 +100,7 @@ export default function Experience() {
                 color: "#CA054D",
                 distance: 150,
                 enable: true,
-                opacity: 0.3,
+                opacity: 0.5,
                 width: 1,
               },
               move: {
@@ -107,25 +109,25 @@ export default function Experience() {
                 outModes: {
                   default: "bounce",
                 },
-                random: true,
-                speed: 0.5,
+                random: false,
+                speed: 1,
                 straight: false,
               },
               number: {
                 density: {
                   enable: true,
-                  area: 1000,
+                  area: 800,
                 },
-                value: 60,
+                value: 25,
               },
               opacity: {
-                value: 0.3,
+                value: 0.5,
               },
               shape: {
                 type: "circle",
               },
               size: {
-                value: { min: 1, max: 3 },
+                value: { min: 1, max: 5 },
               },
             },
             detectRetina: true,
@@ -133,7 +135,9 @@ export default function Experience() {
         />
       </div>
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-12 gradient-text">Work Experience</h1>
+        <h1 className="text-5xl font-bold mb-12 gradient-text">
+          Work Experience
+        </h1>
         <div className="space-y-12 relative">
           <div className="absolute left-8 top-2 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"></div>
           {experiences.map((job, index) => (
@@ -158,6 +162,5 @@ export default function Experience() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
