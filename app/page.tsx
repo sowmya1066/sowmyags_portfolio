@@ -195,7 +195,8 @@ export default function Home() {
                 position: "absolute",
                 inset: "-4px",
                 borderRadius: "0.5rem",
-                background: "linear-gradient(to right, #CA054D, rgba(202, 5, 77, 0.7), rgba(202, 5, 77, 0.5))",
+                background:
+                  "linear-gradient(to right, #CA054D, rgba(202, 5, 77, 0.7), rgba(202, 5, 77, 0.5))",
                 opacity: 0.75,
                 filter: "blur(16px)",
               }}
@@ -237,8 +238,13 @@ export default function Home() {
                 transition: "background-color 0.3s",
               }}
               onClick={() => scrollToSection(3)}
-              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.8)")}
-              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#CA054D")}
+              onMouseOver={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "rgba(202, 5, 77, 0.8)")
+              }
+              onMouseOut={(e) =>
+                (e.currentTarget.style.backgroundColor = "#CA054D")
+              }
             >
               View Projects
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -254,8 +260,14 @@ export default function Home() {
                 transition: "background-color 0.3s",
               }}
               onClick={() => scrollToSection(4)}
-              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.3)")}
-              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.2)")}
+              onMouseOver={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "rgba(202, 5, 77, 0.3)")
+              }
+              onMouseOut={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "rgba(202, 5, 77, 0.2)")
+              }
             >
               Get in Touch
             </button>
@@ -269,25 +281,40 @@ export default function Home() {
         >
           <a
             href="#"
-            style={{ color: "hsl(var(--foreground))", transition: "color 0.3s" }}
+            style={{
+              color: "hsl(var(--foreground))",
+              transition: "color 0.3s",
+            }}
             onMouseOver={(e) => (e.currentTarget.style.color = "#CA054D")}
-            onMouseOut={(e) => (e.currentTarget.style.color = "hsl(var(--foreground))")}
+            onMouseOut={(e) =>
+              (e.currentTarget.style.color = "hsl(var(--foreground))")
+            }
           >
             <Github size={24} />
           </a>
           <a
             href="#"
-            style={{ color: "hsl(var(--foreground))", transition: "color 0.3s" }}
+            style={{
+              color: "hsl(var(--foreground))",
+              transition: "color 0.3s",
+            }}
             onMouseOver={(e) => (e.currentTarget.style.color = "#CA054D")}
-            onMouseOut={(e) => (e.currentTarget.style.color = "hsl(var(--foreground))")}
+            onMouseOut={(e) =>
+              (e.currentTarget.style.color = "hsl(var(--foreground))")
+            }
           >
             <Linkedin size={24} />
           </a>
           <a
             href="#"
-            style={{ color: "hsl(var(--foreground))", transition: "color 0.3s" }}
+            style={{
+              color: "hsl(var(--foreground))",
+              transition: "color 0.3s",
+            }}
             onMouseOver={(e) => (e.currentTarget.style.color = "#CA054D")}
-            onMouseOut={(e) => (e.currentTarget.style.color = "hsl(var(--foreground))")}
+            onMouseOut={(e) =>
+              (e.currentTarget.style.color = "hsl(var(--foreground))")
+            }
           >
             <Twitter size={24} />
           </a>
@@ -309,712 +336,854 @@ export default function Home() {
         />
       </section>
 
-      {/* About Section */}
-      <section
-        ref={(el) => (sectionRefs.current[1] = el)}
-        id="about"
-        className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative z-10 max-w-4xl mx-auto"
+      {/* Mobile Section */}
+      <div className="md:hidden">
+        <section
+          ref={(el) => (sectionRefs.current[1] = el)}
+          id="about"
+          className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: "#CA054D" }}>
-            About Me
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6 relative">
-            {/* Floating code symbols */}
-            <motion.div
-              style={{
-                position: "absolute",
-                top: "-2.5rem",
-                right: "-1.25rem",
-                color: "rgba(202, 5, 77, 0.3)",
-                zIndex: 0,
-              }}
-              animate={{
-                y: [0, -10, 0],
-                rotate: [0, 5, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "reverse",
-              }}
-              className="hidden md:block"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative z-10 max-w-4xl mx-auto"
+          >
+            <h2
+              className="text-3xl md:text-5xl font-bold mb-8"
+              style={{ color: "#CA054D" }}
             >
-              <Code size={40} />
-            </motion.div>
+              About Me
+            </h2>
 
-            <motion.div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: "-1.25rem",
-                color: "rgba(202, 5, 77, 0.3)",
-                zIndex: 0,
-              }}
-              animate={{
-                y: [0, 10, 0],
-                rotate: [0, -5, 0],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "reverse",
-              }}
-              className="hidden md:block"
-            >
-              <Sparkles size={40} />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              viewport={{ once: true }}
-              style={{
-                backgroundColor: "rgba(202, 5, 77, 0.05)",
-                padding: "1.5rem",
-                borderRadius: "0.5rem",
-                border: "1px solid rgba(202, 5, 77, 0.2)",
-                position: "relative",
-              }}
-            >
-              <p className="text-lg">
-                I am an experienced Web Developer with 2.6 years of dedicated practice in the IT sector, specializing in
-                front-end web development. My journey includes designing, developing, testing, and maintaining
-                responsive web applications.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              viewport={{ once: true }}
-              style={{
-                backgroundColor: "rgba(202, 5, 77, 0.1)",
-                padding: "1.5rem",
-                borderRadius: "0.5rem",
-                border: "1px solid rgba(202, 5, 77, 0.2)",
-                position: "relative",
-              }}
-            >
-              <p className="text-lg">
-                Proficient in technologies such as React for dynamic interfaces and Tailwind CSS for streamlined
-                styling, I also bring expertise in backend systems with PostgreSQL and Docker for efficient data
-                management and deployment.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap gap-3 mt-4 md:col-span-2"
-            >
-              {["JavaScript", "React", "Next.js", "Node.js", "TypeScript", "UI/UX"].map((skill, i) => (
-                <span
-                  key={i}
-                  style={{
-                    backgroundColor: "rgba(202, 5, 77, 0.2)",
-                    color: "white",
-                    border: "1px solid rgba(202, 5, 77, 0.5)",
-                    padding: "0.25rem 0.75rem",
-                    borderRadius: "9999px",
-                    fontSize: "0.875rem",
-                  }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Background elements */}
-        <div
-          style={{
-            position: "absolute",
-            top: "25%",
-            right: 0,
-            width: "8rem",
-            height: "8rem",
-            backgroundColor: "rgba(202, 5, 77, 0.1)",
-            borderRadius: "9999px",
-            filter: "blur(24px)",
-          }}
-        ></div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: "25%",
-            left: 0,
-            width: "10rem",
-            height: "10rem",
-            backgroundColor: "rgba(202, 5, 77, 0.05)",
-            borderRadius: "9999px",
-            filter: "blur(24px)",
-          }}
-        ></div>
-      </section>
-
-      {/* Work Experience Section */}
-      <section
-        ref={(el) => (sectionRefs.current[2] = el)}
-        id="experience"
-        className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative z-10 max-w-4xl mx-auto"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: "#CA054D" }}>
-            Work Experience
-          </h2>
-          <div className="space-y-8 relative">
-            {/* Timeline line */}
-            <div
-              style={{
-                position: "absolute",
-                left: "0.75rem",
-                top: "0.5rem",
-                bottom: 0,
-                width: "0.125rem",
-                background: "linear-gradient(to bottom, #CA054D, transparent)",
-              }}
-            ></div>
-
-            {[
-              {
-                title: "Software Engineer",
-                company: "Appiness Interactive",
-                period: "September 2022 - Present",
-                description:
-                  "Worked on TMS, FRS sizing, and VMS Dashboard projects, building dashboards for traffic monitoring, facial recognition, and video management. Focused on real-time data visualization, event handling, and seamless camera integration, server selection",
-              },
-              {
-                title: "Junior Software Engineer",
-                company: "Indegene",
-                period: "July 2022 - September 2022",
-                description:
-                  "Developed dynamic web pages for BI.com, ensuring a optimal user experience. Contributed to the Career Website Development project, collaborating on the Page-As-A-Service (PaaS) feature for efficient page creation.",
-              },
-              {
-                title: "Program Analyst Trainee",
-                company: "Cognizant",
-                period: "January 2022 - June 2022",
-                description:
-                  "Utilized advanced state management techniques to efficiently manage and update application state, enhancing overall performance. Streamlined data handling within React components to ensure smoother interactions and responsiveness.",
-              },
-            ].map((job, index) => (
+            <div className="grid md:grid-cols-2 gap-6 relative">
+              {/* Floating code symbols */}
               <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
-                style={{ paddingLeft: "2.5rem", position: "relative" }}
+                style={{
+                  position: "absolute",
+                  top: "-2.5rem",
+                  right: "-1.25rem",
+                  color: "rgba(202, 5, 77, 0.3)",
+                  zIndex: 0,
+                }}
+                animate={{
+                  y: [0, -10, 0],
+                  rotate: [0, 5, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                }}
+                className="hidden md:block"
               >
-                {/* Timeline dot */}
-                <div
-                  style={{
-                    position: "absolute",
-                    left: 0,
-                    top: "0.5rem",
-                    width: "1.5rem",
-                    height: "1.5rem",
-                    backgroundColor: "#CA054D",
-                    borderRadius: "9999px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "0.75rem",
-                      height: "0.75rem",
-                      backgroundColor: "hsl(var(--background))",
-                      borderRadius: "9999px",
-                    }}
-                  ></div>
-                </div>
-
-                <Card
-                  style={{
-                    transition: "box-shadow 0.3s",
-                    border: "1px solid rgba(202, 5, 77, 0.2)",
-                    backgroundColor: "rgba(34, 39, 55, 0.5)",
-                    backdropFilter: "blur(8px)",
-                  }}
-                >
-                  <CardContent style={{ padding: "1.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", marginBottom: "0.5rem" }}>
-                      <Briefcase
-                        style={{ marginRight: "0.5rem", height: "1.25rem", width: "1.25rem", color: "#CA054D" }}
-                      />
-                      <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>{job.title}</h3>
-                    </div>
-                    <p style={{ color: "hsl(215, 20.2%, 65.1%)", marginBottom: "0.5rem" }}>
-                      {job.company} | {job.period}
-                    </p>
-                    <p>{job.description}</p>
-                  </CardContent>
-                </Card>
+                <Code size={40} />
               </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* Background elements */}
-        <div
-          style={{
-            position: "absolute",
-            top: "33%",
-            right: 0,
-            width: "10rem",
-            height: "10rem",
-            backgroundColor: "rgba(202, 5, 77, 0.1)",
-            borderRadius: "9999px",
-            filter: "blur(24px)",
-          }}
-        ></div>
-      </section>
-
-      {/* Projects Section */}
-      <section
-        ref={(el) => (sectionRefs.current[3] = el)}
-        id="projects"
-        className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative z-10 max-w-6xl mx-auto"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: "#CA054D" }}>
-            Projects
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "AI-Powered Task Manager",
-                description: "A smart to-do app that uses AI to prioritize and categorize tasks.",
-                tags: ["React", "Node.js", "OpenAI API"],
-                image: "/placeholder.svg?height=200&width=400&text=AI+Task+Manager",
-              },
-              {
-                title: "Virtual Reality Portfolio",
-                description: "An immersive VR experience showcasing web development projects.",
-                tags: ["Three.js", "WebVR", "React"],
-                image: "/placeholder.svg?height=200&width=400&text=VR+Portfolio",
-              },
-              {
-                title: "Blockchain Voting System",
-                description: "A secure and transparent voting platform built on blockchain technology.",
-                tags: ["Solidity", "Ethereum", "Web3.js"],
-                image: "/placeholder.svg?height=200&width=400&text=Blockchain+Voting",
-              },
-            ].map((project, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-                viewport={{ once: true }}
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: "-1.25rem",
+                  color: "rgba(202, 5, 77, 0.3)",
+                  zIndex: 0,
+                }}
+                animate={{
+                  y: [0, 10, 0],
+                  rotate: [0, -5, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                }}
+                className="hidden md:block"
               >
-                <Card
-                  style={{
-                    overflow: "hidden",
-                    transition: "box-shadow 0.3s",
-                    border: "1px solid rgba(202, 5, 77, 0.2)",
-                    backgroundColor: "rgba(34, 39, 55, 0.5)",
-                    backdropFilter: "blur(8px)",
-                  }}
-                >
-                  <div style={{ position: "relative", overflow: "hidden" }}>
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      style={{ width: "100%", height: "12rem", objectFit: "cover" }}
-                    />
-                    <div
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        background: "linear-gradient(to top, hsl(222.2, 84%, 4.9%), transparent)",
-                      }}
-                    ></div>
-                  </div>
-                  <CardContent style={{ padding: "1.5rem" }}>
-                    <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.5rem" }}>{project.title}</h3>
-                    <p style={{ color: "hsl(215, 20.2%, 65.1%)", marginBottom: "1rem" }}>{project.description}</p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1rem" }}>
-                      {project.tags.map((tag, i) => (
-                        <span
-                          key={i}
-                          style={{
-                            backgroundColor: "rgba(202, 5, 77, 0.2)",
-                            color: "white",
-                            border: "1px solid rgba(202, 5, 77, 0.5)",
-                            padding: "0.25rem 0.5rem",
-                            borderRadius: "9999px",
-                            fontSize: "0.875rem",
-                          }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <div style={{ display: "flex", gap: "1rem" }}>
-                      <button
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          padding: "0.5rem 0.75rem",
-                          borderRadius: "0.375rem",
-                          border: "1px solid rgba(202, 5, 77, 0.5)",
-                          backgroundColor: "transparent",
-                          color: "white",
-                          fontSize: "0.875rem",
-                          transition: "background-color 0.3s",
-                        }}
-                        onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.2)")}
-                        onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
-                      >
-                        <Github style={{ marginRight: "0.5rem", height: "1rem", width: "1rem" }} /> Code
-                      </button>
-                      <button
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          padding: "0.5rem 0.75rem",
-                          borderRadius: "0.375rem",
-                          backgroundColor: "#CA054D",
-                          color: "white",
-                          fontSize: "0.875rem",
-                          transition: "background-color 0.3s",
-                        }}
-                        onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.8)")}
-                        onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#CA054D")}
-                      >
-                        <ExternalLink style={{ marginRight: "0.5rem", height: "1rem", width: "1rem" }} /> Demo
-                      </button>
-                    </div>
-                  </CardContent>
-                </Card>
+                <Sparkles size={40} />
               </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* Background elements */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "25%",
-            left: 0,
-            width: "10rem",
-            height: "10rem",
-            backgroundColor: "rgba(202, 5, 77, 0.1)",
-            borderRadius: "9999px",
-            filter: "blur(24px)",
-          }}
-        ></div>
-      </section>
-
-      {/* Contact Section */}
-      <section
-        ref={(el) => (sectionRefs.current[4] = el)}
-        id="contact"
-        className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative z-10 max-w-4xl mx-auto"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-8" style={{ color: "#CA054D" }}>
-            Get in Touch
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <p className="text-lg mb-6">
-                I'm always open to new opportunities and collaborations. Whether you have a project in mind or just want
-                to say hi, feel free to reach out!
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <Mail className="text-primary" size={24} />
-                  <span>sowmyaa2406@gmail.com</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <Phone className="text-primary" size={24} />
-                  <span>00000000</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <MapPin className="text-primary" size={24} />
-                  <span>India</span>
-                </div>
-              </div>
-            </div>
-            <form className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 viewport={{ once: true }}
+                style={{
+                  backgroundColor: "rgba(202, 5, 77, 0.05)",
+                  padding: "1.5rem",
+                  borderRadius: "0.5rem",
+                  border: "1px solid rgba(202, 5, 77, 0.2)",
+                  position: "relative",
+                }}
               >
-                <label
-                  htmlFor="name"
-                  style={{ display: "block", fontSize: "0.875rem", fontWeight: 500, marginBottom: "0.5rem" }}
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    borderRadius: "0.375rem",
-                    backgroundColor: "hsl(217.2, 32.6%, 17.5%)",
-                    color: "hsl(var(--foreground))",
-                    border: "1px solid rgba(202, 5, 77, 0.2)",
-                    outline: "none",
-                    transition: "border-color 0.3s, box-shadow 0.3s",
-                  }}
-                  onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "#CA054D"
-                    e.currentTarget.style.boxShadow = "0 0 0 1px #CA054D"
-                  }}
-                  onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(202, 5, 77, 0.2)"
-                    e.currentTarget.style.boxShadow = "none"
-                  }}
-                  required
-                />
+                <p className="text-lg">
+                  I specialize in developing real-time dashboards, data
+                  visualizations, and seamless monitoring tools for smart
+                  surveillance and security solutions across Video, Face and
+                  Traffic Management Systems. My work focuses on transforming
+                  raw data into clear, actionable insights through intuitive
+                  interfaces designed for operational ease.
+                </p>
+                <p className="text-lg">
+                  Earlier in my journey, I contributed to a pharmaceutical
+                  career platform, enhancing job search APIs to deliver faster,
+                  more accurate job discovery experiences for candidates
+                  exploring opportunities in the healthcare sector.
+                </p>
+                <p className="text-lg">
+                  With every project, my focus remains the same — creating
+                  solutions that not only work flawlessly but also enhance the
+                  way users interact with technology. Constantly learning and
+                  evolving, I see every line of code as an opportunity to create
+                  something impactful.
+                </p>
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <label
-                  htmlFor="email"
-                  style={{ display: "block", fontSize: "0.875rem", fontWeight: 500, marginBottom: "0.5rem" }}
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    borderRadius: "0.375rem",
-                    backgroundColor: "hsl(217.2, 32.6%, 17.5%)",
-                    color: "hsl(var(--foreground))",
-                    border: "1px solid rgba(202, 5, 77, 0.2)",
-                    outline: "none",
-                    transition: "border-color 0.3s, box-shadow 0.3s",
-                  }}
-                  onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "#CA054D"
-                    e.currentTarget.style.boxShadow = "0 0 0 1px #CA054D"
-                  }}
-                  onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(202, 5, 77, 0.2)"
-                    e.currentTarget.style.boxShadow = "none"
-                  }}
-                  required
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <label
-                  htmlFor="message"
-                  style={{
-                    display: "block",
-                    fontSize: "0.875rem",
-                    fontWeight: 500,
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    borderRadius: "0.375rem",
-                    backgroundColor: "hsl(217.2, 32.6%, 17.5%)",
-                    color: "hsl(var(--foreground))",
-                    border: "1px solid rgba(202, 5, 77, 0.2)",
-                    outline: "none",
-                    transition: "border-color 0.3s, box-shadow 0.3s",
-                  }}
-                  onFocus={(e) => {
-                    e.currentTarget.style.borderColor = "#CA054D"
-                    e.currentTarget.style.boxShadow = "0 0 0 1px #CA054D"
-                  }}
-                  onBlur={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(202, 5, 77, 0.2)"
-                    e.currentTarget.style.boxShadow = "none"
-                  }}
-                  required
-                ></textarea>
-              </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
                 viewport={{ once: true }}
+                className="flex flex-wrap gap-3 mt-4 md:col-span-2"
               >
-                <button
-                  type="submit"
-                  style={{
-                    width: "100%",
-                    backgroundColor: "#CA054D",
-                    color: "white",
-                    padding: "0.75rem",
-                    borderRadius: "0.375rem",
-                    fontWeight: 500,
-                    transition: "background-color 0.3s",
-                  }}
-                  onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.8)")}
-                  onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#CA054D")}
-                >
-                  Send Message
-                </button>
+                {[
+                  "JavaScript",
+                  "React",
+                  "Next.js",
+                  "Node.js",
+                  "TypeScript",
+                  "WebRTC",
+                  "My SQL",
+                ].map((skill, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      backgroundColor: "rgba(202, 5, 77, 0.2)",
+                      color: "white",
+                      border: "1px solid rgba(202, 5, 77, 0.5)",
+                      padding: "0.25rem 0.75rem",
+                      borderRadius: "9999px",
+                      fontSize: "0.875rem",
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
               </motion.div>
-            </form>
-          </div>
-        </motion.div>
+            </div>
+          </motion.div>
 
-        {/* Background elements */}
+          {/* Background elements */}
+          <div
+            style={{
+              position: "absolute",
+              top: "25%",
+              right: 0,
+              width: "8rem",
+              height: "8rem",
+              backgroundColor: "rgba(202, 5, 77, 0.1)",
+              borderRadius: "9999px",
+              filter: "blur(24px)",
+            }}
+          ></div>
+          <div
+            style={{
+              position: "absolute",
+              bottom: "25%",
+              left: 0,
+              width: "10rem",
+              height: "10rem",
+              backgroundColor: "rgba(202, 5, 77, 0.05)",
+              borderRadius: "9999px",
+              filter: "blur(24px)",
+            }}
+          ></div>
+        </section>
+
+        {/* Work Experience Section */}
+        <section
+          ref={(el) => (sectionRefs.current[2] = el)}
+          id="experience"
+          className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative z-10 max-w-4xl mx-auto"
+          >
+            <h2
+              className="text-3xl md:text-5xl font-bold mb-8"
+              style={{ color: "#CA054D" }}
+            >
+              Work Experience
+            </h2>
+            <div className="space-y-8 relative">
+              {/* Timeline line */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "0.75rem",
+                  top: "0.5rem",
+                  bottom: 0,
+                  width: "0.125rem",
+                  background:
+                    "linear-gradient(to bottom, #CA054D, transparent)",
+                }}
+              ></div>
+
+              {[
+                {
+                  title: "Software Engineer",
+                  company: "Appiness Interactive",
+                  period: "September 2024 - Present",
+                  description:
+                    "I specialize in building real-time monitoring dashboards for traffic surveillance, facial recognition, and video management, focusing on event visualization, live camera integration, and seamless data handling. Using React, Next.js, TypeScript, JavaScript, Python and styling tools like Shadcn, Chakra UI and Tailwind. Developed real-time event updates via WebSockets and REST APIs. I implemented shift-based event tracking with drilldown charts, allowing users to explore detailed traffic and security events for each shift. Integrated logic to calculate storage and hardware requirements based on camera type, recording duration, and environment. My work also includes handling live RTSP/HLS streams, dynamic server selection, and real-time alert scrolling systems for continuous event updates. I improved search efficiency by 10% in traffic violation lookups through optimized filtering logic and backend queries. Across all projects, I focused on combining visual clarity, functional depth, and performance optimization to deliver seamless user experiences.",
+                },
+                {
+                  title: "Junior Software Engineer",
+                  company: "Indegene",
+                  period: "July 2022 - September 2024",
+                  description:
+                    "Developed dynamic web pages for BI.com, ensuring a optimal user experience. Collaborated on the Page-As-A-Service (PaaS) feature, which enabled business users to quickly create and manage web pages with minimal technical intervention. A key part of my contribution was integrating the Taleo API with SAP SuccessFactors, automating job postings and ensuring seamless candidate data synchronization between the systems. This integration enhanced the overall recruitment process automation by reducing manual data handling and ensuring real-time updates.",
+                },
+                {
+                  title: "Program Analyst Trainee (Internship)",
+                  company: "Cognizant",
+                  period: "January 2022 - June 2022",
+                  description:
+                    "Worked on an eCommerce application, building dynamic product listing pages, category filters, and an interactive cart system using React. Applied advanced state management with Context API and Redux to efficiently handle large product data and user interactions. Streamlined data fetching and synchronization with backend services to ensure real-time updates. Focused on component reusability, performance optimization, and scalable architecture. Gained hands-on experience with SDLC , API integration, and state handling best practices.",
+                },
+              ].map((job, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.2, duration: 0.8 }}
+                  viewport={{ once: true }}
+                  style={{ paddingLeft: "2.5rem", position: "relative" }}
+                >
+                  {/* Timeline dot */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: 0,
+                      top: "0.5rem",
+                      width: "1.5rem",
+                      height: "1.5rem",
+                      backgroundColor: "#CA054D",
+                      borderRadius: "9999px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "0.75rem",
+                        height: "0.75rem",
+                        backgroundColor: "hsl(var(--background))",
+                        borderRadius: "9999px",
+                      }}
+                    ></div>
+                  </div>
+
+                  <Card
+                    style={{
+                      transition: "box-shadow 0.3s",
+                      border: "1px solid rgba(202, 5, 77, 0.2)",
+                      backgroundColor: "rgba(34, 39, 55, 0.5)",
+                      backdropFilter: "blur(8px)",
+                    }}
+                  >
+                    <CardContent style={{ padding: "1.5rem" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          marginBottom: "0.5rem",
+                        }}
+                      >
+                        <Briefcase
+                          style={{
+                            marginRight: "0.5rem",
+                            height: "1.25rem",
+                            width: "1.25rem",
+                            color: "#CA054D",
+                          }}
+                        />
+                        <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
+                          {job.title}
+                        </h3>
+                      </div>
+                      <p
+                        style={{
+                          color: "hsl(215, 20.2%, 65.1%)",
+                          marginBottom: "0.5rem",
+                        }}
+                      >
+                        {job.company} | {job.period}
+                      </p>
+                      <p>{job.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Background elements */}
+          <div
+            style={{
+              position: "absolute",
+              top: "33%",
+              right: 0,
+              width: "10rem",
+              height: "10rem",
+              backgroundColor: "rgba(202, 5, 77, 0.1)",
+              borderRadius: "9999px",
+              filter: "blur(24px)",
+            }}
+          ></div>
+        </section>
+
+        {/* Projects Section */}
+        <section
+          ref={(el) => (sectionRefs.current[3] = el)}
+          id="projects"
+          className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative z-10 max-w-6xl mx-auto"
+          >
+            <h2
+              className="text-3xl md:text-5xl font-bold mb-8"
+              style={{ color: "#CA054D" }}
+            >
+              Projects
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Next Food",
+                  description:
+                    "A recipe-sharing platform built with Nextjs, where users can explore community and share their favorite recipes.",
+                  image: "/nextfood.png?height=300&width=400&text=Neon+Dreams",
+                  tags: ["Next.js", "Javascript", "SQLite"],
+                  links: {
+                    github: "https://github.com/sowmya1066/nextjs",
+                    live: "https://next-food-iota.vercel.app/meals",
+                  },
+                },
+                {
+                  title: "E-commerce ShopOn",
+                  description:
+                    "An e-commerce shopping app built with Express.js, handling meal data retrieval and order processing via REST APIs",
+                  image:
+                    "/ShopOn.png?height=300&width=400&text=Crypto+Dashboard",
+                  tags: ["React", "NodeJS", "ExpressJS", "RestAPIs"],
+                  links: {
+                    github: "https://github.com/sowmya1066/shopon",
+                    live: "https://shopon-green.vercel.app/",
+                  },
+                },
+                {
+                  title: "Zen List",
+                  description:
+                    "Create your todo's using machine learning algorithms",
+                  image:
+                    "/ZenList.png?height=300&width=400&text=AI+Art+Generator",
+                  tags: ["Python", "TensorFlow", "React"],
+                  links: {
+                    github: "https://github.com/sowmya1066/ZenList",
+                    live: "https://zen-list.vercel.app/",
+                  },
+                },
+                {
+                  title: "Wheel Trek",
+                  description:
+                    "An interactive map application using Leaflet that lets users log and visualize their cycling routes and activity details.",
+                  image:
+                    "/wheelTrek.png?height=300&width=400&text=Crypto+Dashboard",
+                  tags: ["JavaScript", "API Integration", "Leaflet"],
+                  links: {
+                    github: "https://github.com/sowmya1066/wheeltrek",
+                    live: "https://wheeltrek-sowmya.netlify.app/",
+                  },
+                },
+              ].map((project, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <Card
+                    style={{
+                      overflow: "hidden",
+                      transition: "box-shadow 0.3s",
+                      border: "1px solid rgba(202, 5, 77, 0.2)",
+                      backgroundColor: "rgba(34, 39, 55, 0.5)",
+                      backdropFilter: "blur(8px)",
+                    }}
+                  >
+                    <div style={{ position: "relative", overflow: "hidden" }}>
+                      <img
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        style={{
+                          width: "100%",
+                          height: "12rem",
+                          objectFit: "cover",
+                        }}
+                      />
+                      <div
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          background:
+                            "linear-gradient(to top, hsl(222.2, 84%, 4.9%), transparent)",
+                        }}
+                      ></div>
+                    </div>
+                    <CardContent style={{ padding: "1.5rem" }}>
+                      <h3
+                        style={{
+                          fontSize: "1.25rem",
+                          fontWeight: 700,
+                          marginBottom: "0.5rem",
+                        }}
+                      >
+                        {project.title}
+                      </h3>
+                      <p
+                        style={{
+                          color: "hsl(215, 20.2%, 65.1%)",
+                          marginBottom: "1rem",
+                        }}
+                      >
+                        {project.description}
+                      </p>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "0.5rem",
+                          marginBottom: "1rem",
+                        }}
+                      >
+                        {project.tags.map((tag, i) => (
+                          <span
+                            key={i}
+                            style={{
+                              backgroundColor: "rgba(202, 5, 77, 0.2)",
+                              color: "white",
+                              border: "1px solid rgba(202, 5, 77, 0.5)",
+                              padding: "0.25rem 0.5rem",
+                              borderRadius: "9999px",
+                              fontSize: "0.875rem",
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div style={{ display: "flex", gap: "1rem" }}>
+                        <button
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            padding: "0.5rem 0.75rem",
+                            borderRadius: "0.375rem",
+                            border: "1px solid rgba(202, 5, 77, 0.5)",
+                            backgroundColor: "transparent",
+                            color: "white",
+                            fontSize: "0.875rem",
+                            transition: "background-color 0.3s",
+                          }}
+                          onMouseOver={(e) =>
+                            (e.currentTarget.style.backgroundColor =
+                              "rgba(202, 5, 77, 0.2)")
+                          }
+                          onMouseOut={(e) =>
+                            (e.currentTarget.style.backgroundColor =
+                              "transparent")
+                          }
+                        >
+                          <Github
+                            style={{
+                              marginRight: "0.5rem",
+                              height: "1rem",
+                              width: "1rem",
+                            }}
+                          />{" "}
+                          Code
+                        </button>
+                        <button
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            padding: "0.5rem 0.75rem",
+                            borderRadius: "0.375rem",
+                            backgroundColor: "#CA054D",
+                            color: "white",
+                            fontSize: "0.875rem",
+                            transition: "background-color 0.3s",
+                          }}
+                          onMouseOver={(e) =>
+                            (e.currentTarget.style.backgroundColor =
+                              "rgba(202, 5, 77, 0.8)")
+                          }
+                          onMouseOut={(e) =>
+                            (e.currentTarget.style.backgroundColor = "#CA054D")
+                          }
+                        >
+                          <ExternalLink
+                            style={{
+                              marginRight: "0.5rem",
+                              height: "1rem",
+                              width: "1rem",
+                            }}
+                          />{" "}
+                         
+                        </button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Background elements */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "25%",
+              left: 0,
+              width: "10rem",
+              height: "10rem",
+              backgroundColor: "rgba(202, 5, 77, 0.1)",
+              borderRadius: "9999px",
+              filter: "blur(24px)",
+            }}
+          ></div>
+        </section>
+
+        {/* Contact Section */}
+        <section
+          ref={(el) => (sectionRefs.current[4] = el)}
+          id="contact"
+          className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative z-10 max-w-4xl mx-auto"
+          >
+            <h2
+              className="text-3xl md:text-5xl font-bold mb-8"
+              style={{ color: "#CA054D" }}
+            >
+              Get in Touch
+            </h2>
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <p className="text-lg mb-6">
+                  I'm always open to new opportunities and collaborations.
+                  Whether you have a project in mind or just want to say hi,
+                  feel free to reach out!
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <Mail className="text-primary" size={24} />
+                    <span>sowmyaa2406@gmail.com</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <Phone className="text-primary" size={24} />
+                    <span>00000000</span>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <MapPin className="text-primary" size={24} />
+                    <span>India</span>
+                  </div>
+                </div>
+              </div>
+              <form className="space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <label
+                    htmlFor="name"
+                    style={{
+                      display: "block",
+                      fontSize: "0.875rem",
+                      fontWeight: 500,
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    style={{
+                      width: "100%",
+                      padding: "0.75rem",
+                      borderRadius: "0.375rem",
+                      backgroundColor: "hsl(217.2, 32.6%, 17.5%)",
+                      color: "hsl(var(--foreground))",
+                      border: "1px solid rgba(202, 5, 77, 0.2)",
+                      outline: "none",
+                      transition: "border-color 0.3s, box-shadow 0.3s",
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = "#CA054D";
+                      e.currentTarget.style.boxShadow = "0 0 0 1px #CA054D";
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(202, 5, 77, 0.2)";
+                      e.currentTarget.style.boxShadow = "none";
+                    }}
+                    required
+                  />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <label
+                    htmlFor="email"
+                    style={{
+                      display: "block",
+                      fontSize: "0.875rem",
+                      fontWeight: 500,
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    style={{
+                      width: "100%",
+                      padding: "0.75rem",
+                      borderRadius: "0.375rem",
+                      backgroundColor: "hsl(217.2, 32.6%, 17.5%)",
+                      color: "hsl(var(--foreground))",
+                      border: "1px solid rgba(202, 5, 77, 0.2)",
+                      outline: "none",
+                      transition: "border-color 0.3s, box-shadow 0.3s",
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = "#CA054D";
+                      e.currentTarget.style.boxShadow = "0 0 0 1px #CA054D";
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(202, 5, 77, 0.2)";
+                      e.currentTarget.style.boxShadow = "none";
+                    }}
+                    required
+                  />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <label
+                    htmlFor="message"
+                    style={{
+                      display: "block",
+                      fontSize: "0.875rem",
+                      fontWeight: 500,
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    style={{
+                      width: "100%",
+                      padding: "0.75rem",
+                      borderRadius: "0.375rem",
+                      backgroundColor: "hsl(217.2, 32.6%, 17.5%)",
+                      color: "hsl(var(--foreground))",
+                      border: "1px solid rgba(202, 5, 77, 0.2)",
+                      outline: "none",
+                      transition: "border-color 0.3s, box-shadow 0.3s",
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = "#CA054D";
+                      e.currentTarget.style.boxShadow = "0 0 0 1px #CA054D";
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(202, 5, 77, 0.2)";
+                      e.currentTarget.style.boxShadow = "none";
+                    }}
+                    required
+                  ></textarea>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <button
+                    type="submit"
+                    style={{
+                      width: "100%",
+                      backgroundColor: "#CA054D",
+                      color: "white",
+                      padding: "0.75rem",
+                      borderRadius: "0.375rem",
+                      fontWeight: 500,
+                      transition: "background-color 0.3s",
+                    }}
+                    onMouseOver={(e) =>
+                      (e.currentTarget.style.backgroundColor =
+                        "rgba(202, 5, 77, 0.8)")
+                    }
+                    onMouseOut={(e) =>
+                      (e.currentTarget.style.backgroundColor = "#CA054D")
+                    }
+                  >
+                    Send Message
+                  </button>
+                </motion.div>
+              </form>
+            </div>
+          </motion.div>
+
+          {/* Background elements */}
+          <div
+            style={{
+              position: "absolute",
+              top: "25%",
+              right: 0,
+              width: "10rem",
+              height: "10rem",
+              backgroundColor: "rgba(202, 5, 77, 0.1)",
+              borderRadius: "9999px",
+              filter: "blur(24px)",
+            }}
+          ></div>
+          <div
+            style={{
+              position: "absolute",
+              bottom: "33%",
+              left: 0,
+              width: "8rem",
+              height: "8rem",
+              backgroundColor: "rgba(202, 5, 77, 0.05)",
+              borderRadius: "9999px",
+              filter: "blur(24px)",
+            }}
+          ></div>
+        </section>
+
+        {/* Navigation Buttons (only on mobile) */}
         <div
+          className="md:hidden"
           style={{
-            position: "absolute",
-            top: "25%",
-            right: 0,
-            width: "10rem",
-            height: "10rem",
-            backgroundColor: "rgba(202, 5, 77, 0.1)",
-            borderRadius: "9999px",
-            filter: "blur(24px)",
-          }}
-        ></div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: "33%",
+            position: "fixed",
+            bottom: "1rem",
             left: 0,
-            width: "8rem",
-            height: "8rem",
-            backgroundColor: "rgba(202, 5, 77, 0.05)",
-            borderRadius: "9999px",
-            filter: "blur(24px)",
-          }}
-        ></div>
-      </section>
-
-      {/* Navigation Buttons (only on mobile) */}
-      <div
-        className="md:hidden"
-        style={{
-          position: "fixed",
-          bottom: "1rem",
-          left: 0,
-          right: 0,
-          display: "flex",
-          justifyContent: "center",
-          gap: "1rem",
-          zIndex: 50,
-        }}
-      >
-        <button
-          onClick={() => scrollToSection(Math.max(0, currentSection - 1))}
-          disabled={currentSection === 0}
-          style={{
-            backgroundColor: "rgba(34, 39, 55, 0.2)",
-            backdropFilter: "blur(8px)",
-            border: "1px solid rgba(202, 5, 77, 0.5)",
-            borderRadius: "0.375rem",
-            width: "2.5rem",
-            height: "2.5rem",
+            right: 0,
             display: "flex",
-            alignItems: "center",
             justifyContent: "center",
-            transition: "background-color 0.3s",
-            opacity: currentSection === 0 ? 0.5 : 1,
-            cursor: currentSection === 0 ? "not-allowed" : "pointer",
-          }}
-          onMouseOver={(e) => {
-            if (currentSection !== 0) {
-              e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.2)"
-            }
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(34, 39, 55, 0.2)"
+            gap: "1rem",
+            zIndex: 50,
           }}
         >
-          <ChevronLeft style={{ height: "1rem", width: "1rem" }} />
-        </button>
-        <button
-          onClick={() => scrollToSection(Math.min(sections.length - 1, currentSection + 1))}
-          disabled={currentSection === sections.length - 1}
-          style={{
-            backgroundColor: "rgba(34, 39, 55, 0.2)",
-            backdropFilter: "blur(8px)",
-            border: "1px solid rgba(202, 5, 77, 0.5)",
-            borderRadius: "0.375rem",
-            width: "2.5rem",
-            height: "2.5rem",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            transition: "background-color 0.3s",
-            opacity: currentSection === sections.length - 1 ? 0.5 : 1,
-            cursor: currentSection === sections.length - 1 ? "not-allowed" : "pointer",
-          }}
-          onMouseOver={(e) => {
-            if (currentSection !== sections.length - 1) {
-              e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.2)"
+          <button
+            onClick={() => scrollToSection(Math.max(0, currentSection - 1))}
+            disabled={currentSection === 0}
+            style={{
+              backgroundColor: "rgba(34, 39, 55, 0.2)",
+              backdropFilter: "blur(8px)",
+              border: "1px solid rgba(202, 5, 77, 0.5)",
+              borderRadius: "0.375rem",
+              width: "2.5rem",
+              height: "2.5rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "background-color 0.3s",
+              opacity: currentSection === 0 ? 0.5 : 1,
+              cursor: currentSection === 0 ? "not-allowed" : "pointer",
+            }}
+            onMouseOver={(e) => {
+              if (currentSection !== 0) {
+                e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.2)";
+              }
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(34, 39, 55, 0.2)";
+            }}
+          >
+            <ChevronLeft style={{ height: "1rem", width: "1rem" }} />
+          </button>
+          <button
+            onClick={() =>
+              scrollToSection(Math.min(sections.length - 1, currentSection + 1))
             }
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = "rgba(34, 39, 55, 0.2)"
-          }}
-        >
-          <ChevronRight style={{ height: "1rem", width: "1rem" }} />
-        </button>
+            disabled={currentSection === sections.length - 1}
+            style={{
+              backgroundColor: "rgba(34, 39, 55, 0.2)",
+              backdropFilter: "blur(8px)",
+              border: "1px solid rgba(202, 5, 77, 0.5)",
+              borderRadius: "0.375rem",
+              width: "2.5rem",
+              height: "2.5rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "background-color 0.3s",
+              opacity: currentSection === sections.length - 1 ? 0.5 : 1,
+              cursor:
+                currentSection === sections.length - 1
+                  ? "not-allowed"
+                  : "pointer",
+            }}
+            onMouseOver={(e) => {
+              if (currentSection !== sections.length - 1) {
+                e.currentTarget.style.backgroundColor = "rgba(202, 5, 77, 0.2)";
+              }
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(34, 39, 55, 0.2)";
+            }}
+          >
+            <ChevronRight style={{ height: "1rem", width: "1rem" }} />
+          </button>
+        </div>
       </div>
     </main>
-  )
+  );
 }
 
