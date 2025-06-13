@@ -157,10 +157,10 @@ export default function Home() {
                   enable: true,
                   area: 1000,
                 },
-                value: 60,
+                value: 70,
               },
               opacity: {
-                value: 0.3,
+                value: 0.5,
               },
               shape: {
                 type: "circle",
