@@ -1,22 +1,22 @@
-"use client"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const Navigation = () => {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -24,7 +24,7 @@ const Navigation = () => {
     { name: "Experience", path: "/experience" },
     { name: "Projects", path: "/projects" },
     { name: "Contact", path: "/contact" },
-  ]
+  ];
 
   return (
     <motion.nav
@@ -76,7 +76,9 @@ const Navigation = () => {
                 cursor: "pointer",
               }}
               onMouseOver={(e) => (e.currentTarget.style.color = "#CA054D")}
-              onMouseOut={(e) => (e.currentTarget.style.color = "hsl(var(--foreground))")}
+              onMouseOut={(e) =>
+                (e.currentTarget.style.color = "hsl(var(--foreground))")
+              }
             >
               {isOpen ? "Close" : "Menu"}
             </button>
@@ -95,13 +97,16 @@ const Navigation = () => {
                     fontSize: "1.125rem",
                     fontWeight: 500,
                     transition: "color 0.3s",
-                    color: pathname === item.path ? "#CA054D" : "hsl(var(--foreground))",
+                    color:
+                      pathname === item.path
+                        ? "#CA054D"
+                        : "hsl(var(--foreground))",
                     position: "relative",
                   }}
                   onMouseOver={(e) => (e.currentTarget.style.color = "#CA054D")}
                   onMouseOut={(e) => {
                     if (pathname !== item.path) {
-                      e.currentTarget.style.color = "hsl(var(--foreground))"
+                      e.currentTarget.style.color = "hsl(var(--foreground))";
                     }
                   }}
                 >
@@ -132,7 +137,14 @@ const Navigation = () => {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
         >
-          <ul style={{ padding: "1rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+          <ul
+            style={{
+              padding: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.5rem",
+            }}
+          >
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link
@@ -143,13 +155,16 @@ const Navigation = () => {
                     fontSize: "1.125rem",
                     fontWeight: 500,
                     transition: "color 0.3s",
-                    color: pathname === item.path ? "#CA054D" : "hsl(var(--foreground))",
+                    color:
+                      pathname === item.path
+                        ? "#CA054D"
+                        : "hsl(var(--foreground))",
                   }}
                   onClick={() => setIsOpen(false)}
                   onMouseOver={(e) => (e.currentTarget.style.color = "#CA054D")}
                   onMouseOut={(e) => {
                     if (pathname !== item.path) {
-                      e.currentTarget.style.color = "hsl(var(--foreground))"
+                      e.currentTarget.style.color = "hsl(var(--foreground))";
                     }
                   }}
                 >
@@ -161,8 +176,7 @@ const Navigation = () => {
         </motion.div>
       )}
     </motion.nav>
-  )
-}
+  );
+};
 
-export default Navigation
-
+export default Navigation;
