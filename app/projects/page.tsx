@@ -209,7 +209,7 @@ export default function Projects() {
               }}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
-              className="bg-card rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-card rounded-xl overflow-hidden  hover:shadow-lg transition-shadow "
               style={{
                 border: "1px solid rgba(202, 5, 77, 0.2)",
                 backgroundColor: "rgba(34, 39, 55, 0.5)",

@@ -17,7 +17,11 @@ import {
   MapPin,
 } from "lucide-react"
 import dynamic from "next/dynamic"
+import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
+import AboutMe from "../public/sowmya.png";
+import Image from "next/image";
+import { ChevronRightIcon } from "lucide-react";
 
 // Dynamically import Particles to avoid SSR issues
 const Particles = dynamic(() => import("react-particles").then((mod) => mod.default), {
@@ -226,51 +230,56 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <button
-              style={{
-                backgroundColor: "#CA054D",
-                color: "white",
-                padding: "0.75rem 1.5rem",
-                borderRadius: "9999px",
-                fontWeight: 500,
-                display: "flex",
-                alignItems: "center",
-                transition: "background-color 0.3s",
-              }}
-              onClick={() => scrollToSection(3)}
-              onMouseOver={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "rgba(202, 5, 77, 0.8)")
-              }
-              onMouseOut={(e) =>
-                (e.currentTarget.style.backgroundColor = "#CA054D")
-              }
-            >
-              View Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </button>
-            <button
-              style={{
-                backgroundColor: "rgba(202, 5, 77, 0.2)",
-                color: "white",
-                padding: "0.75rem 1.5rem",
-                borderRadius: "9999px",
-                fontWeight: 500,
-                border: "1px solid rgba(202, 5, 77, 0.5)",
-                transition: "background-color 0.3s",
-              }}
-              onClick={() => scrollToSection(4)}
-              onMouseOver={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "rgba(202, 5, 77, 0.3)")
-              }
-              onMouseOut={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "rgba(202, 5, 77, 0.2)")
-              }
-            >
-              Get in Touch
-            </button>
+            <Link href="/projects">
+              <button
+                style={{
+                  backgroundColor: "#CA054D",
+                  color: "white",
+                  padding: "0.75rem 1.5rem",
+                  borderRadius: "9999px",
+                  fontWeight: 500,
+                  display: "flex",
+                  alignItems: "center",
+                  transition: "background-color 0.3s",
+                }}
+                onClick={() => scrollToSection(3)}
+                onMouseOver={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "rgba(202, 5, 77, 0.8)")
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.style.backgroundColor = "#CA054D")
+                }
+              >
+                View Projects
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+            </Link>
+
+            <Link href="/contact">
+              <button
+                style={{
+                  backgroundColor: "rgba(202, 5, 77, 0.2)",
+                  color: "white",
+                  padding: "0.75rem 1.5rem",
+                  borderRadius: "9999px",
+                  fontWeight: 500,
+                  border: "1px solid rgba(202, 5, 77, 0.5)",
+                  transition: "background-color 0.3s",
+                }}
+                onClick={() => scrollToSection(4)}
+                onMouseOver={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "rgba(202, 5, 77, 0.3)")
+                }
+                onMouseOut={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "rgba(202, 5, 77, 0.2)")
+                }
+              >
+                Get in Touch
+              </button>
+            </Link>
           </motion.div>
         </motion.div>
         <motion.div
@@ -280,7 +289,7 @@ export default function Home() {
           transition={{ delay: 1.2, duration: 0.8 }}
         >
           <a
-            href="#"
+            href="https://github.com/sowmya1066"
             style={{
               color: "hsl(var(--foreground))",
               transition: "color 0.3s",
@@ -293,7 +302,7 @@ export default function Home() {
             <Github size={24} />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/sowmya-g-s-060b95210"
             style={{
               color: "hsl(var(--foreground))",
               transition: "color 0.3s",
@@ -341,7 +350,7 @@ export default function Home() {
         <section
           ref={(el) => (sectionRefs.current[1] = el)}
           id="about"
-          className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
+          className="min-h-screen py-0 px-8 flex flex-col justify-center relative"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -416,60 +425,93 @@ export default function Home() {
                   position: "relative",
                 }}
               >
-                <p className="text-lg">
-                  I specialize in developing real-time dashboards, data
-                  visualizations, and seamless monitoring tools for smart
-                  surveillance and security solutions across Video, Face and
-                  Traffic Management Systems. My work focuses on transforming
-                  raw data into clear, actionable insights through intuitive
-                  interfaces designed for operational ease.
-                </p>
-                <p className="text-lg">
-                  Earlier in my journey, I contributed to a pharmaceutical
-                  career platform, enhancing job search APIs to deliver faster,
-                  more accurate job discovery experiences for candidates
-                  exploring opportunities in the healthcare sector.
-                </p>
-                <p className="text-lg">
-                  With every project, my focus remains the same — creating
-                  solutions that not only work flawlessly but also enhance the
-                  way users interact with technology. Constantly learning and
-                  evolving, I see every line of code as an opportunity to create
-                  something impactful.
-                </p>
+                <div className="lg:col-span-2 flex justify-center lg:justify-evenly mt-2 mb-4">
+                  <div className="relative w-64 h-64 group">
+                    <div
+                      className="absolute inset-0 rounded-2xl z-[-1]"
+                      style={{
+                        background:
+                          "linear-gradient(to right, rgba(202, 5, 77, 0.5), rgba(202, 5, 77, 0.4), rgba(202, 5, 77, 0.2))",
+                      }}
+                    />
+                    {/* Main image border box */}
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-[#CA054D] z-10">
+                      <Image
+                        src={AboutMe || "/placeholder.svg"}
+                        alt="Sowmya"
+                        className="w-full h-full object-fit"
+                        fill
+                      />
+                    </div>
+
+                    {/* Offset border for bottom-right glow effect */}
+                    <div className="absolute top-2 left-2 w-full h-full rounded-2xl border-2 border-[#CA054D] opacity-80 z-0" />
+                  </div>
+                </div>
+                <div className="space-y-6">
+                  <p className="text-lg leading-relaxed text-gray-300">
+                    Hello! My name is{" "}
+                    <span className="text-[#CA054D] font-semibold">Sowmya</span>{" "}
+                    and I enjoy creating things that live on the internet. My
+                    interest in web development started back in 2022 when I
+                    decided to try building custom solutions — turns out hacking
+                    together a custom dashboard taught me a lot about modern web
+                    technologies!
+                  </p>
+
+                  <p className="text-lg leading-relaxed text-gray-300">
+                    Fast-forward to today, and I've had the privilege of working
+                    at various companies building
+                    <span className="text-[#CA054D] font-medium">
+                      {" "}
+                      real-time dashboards
+                    </span>
+                    ,
+                    <span className="text-[#CA054D] font-medium">
+                      {" "}
+                      data visualizations
+                    </span>
+                    , and seamless monitoring tools for{" "}
+                    <span className="text-[#CA054D] font-medium">
+                      smart surveillance
+                    </span>{" "}
+                    and security solutions.
+                  </p>
+
+                  <p className="text-lg leading-relaxed text-gray-300">
+                    I also recently worked on pharmaceutical career platforms,
+                    enhancing job search APIs to deliver faster, more accurate
+                    job discovery experiences for candidates exploring
+                    opportunities in the healthcare sector.
+                  </p>
+                </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                viewport={{ once: true }}
-                className="flex flex-wrap gap-3 mt-4 md:col-span-2"
-              >
-                {[
-                  "JavaScript",
-                  "React",
-                  "Next.js",
-                  "Node.js",
-                  "TypeScript",
-                  "WebRTC",
-                  "My SQL",
-                ].map((skill, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      backgroundColor: "rgba(202, 5, 77, 0.2)",
-                      color: "white",
-                      border: "1px solid rgba(202, 5, 77, 0.5)",
-                      padding: "0.25rem 0.75rem",
-                      borderRadius: "9999px",
-                      fontSize: "0.875rem",
-                    }}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </motion.div>
+              <div className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 shadow-2xl">
+                <h3 className="text-xl font-semibold text-white mb-6">
+                  Technologies I've been working with recently:
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    "JavaScript (ES6+)",
+                    "TypeScript",
+                    "React",
+                    "Node.js",
+                    "Next.js",
+                    "MySQL",
+                    "Python",
+                  ].map((tech, index) => (
+                    <div key={index} className="flex items-center group">
+                      <div className=" text-[#CA054D]">
+                        <ChevronRightIcon />
+                      </div>
+                      <span className="text-gray-300 group-hover:text-white transition-colors">
+                        {tech}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -504,7 +546,7 @@ export default function Home() {
         <section
           ref={(el) => (sectionRefs.current[2] = el)}
           id="experience"
-          className="min-h-screen py-16 px-8 flex flex-col justify-center relative"
+          className="min-h-screen py-16 px-4 flex flex-col justify-center relative"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -519,7 +561,7 @@ export default function Home() {
             >
               Work Experience
             </h2>
-            <div className="space-y-8 relative">
+            <div className="space-y-8 relative ">
               {/* Timeline line */}
               <div
                 style={{
@@ -595,6 +637,7 @@ export default function Home() {
                       border: "1px solid rgba(202, 5, 77, 0.2)",
                       backgroundColor: "rgba(34, 39, 55, 0.5)",
                       backdropFilter: "blur(8px)",
+                      borderRadius: "12px",
                     }}
                   >
                     <CardContent style={{ padding: "1.5rem" }}>
@@ -851,7 +894,6 @@ export default function Home() {
                               width: "1rem",
                             }}
                           />{" "}
-                         
                         </button>
                       </div>
                     </CardContent>

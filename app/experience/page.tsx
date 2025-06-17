@@ -147,7 +147,8 @@ export default function Experience() {
                   <div className="w-3 h-3 bg-background rounded-full"></div>
                 </div>
               </div>
-              <div className="bg-card rounded-lg p-6 hover:shadow-lg transition-shadow border border-border/50">
+              <div className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 shadow-2xl">
+        
                 <div className="flex items-center mb-2">
                   <Briefcase className="mr-2 h-5 w-5 text-primary" />
                   <h3 className="text-2xl font-bold">{job.title}</h3>
@@ -155,7 +156,7 @@ export default function Experience() {
                 <p className="text-muted-foreground mb-4">
                   {job.company} | {job.period}
                 </p>
-                <p>{job.description}</p>
+                <p className="text-lg leading-relaxed text-gray-300">{job.description}</p>
               </div>
             </div>
           ))}
