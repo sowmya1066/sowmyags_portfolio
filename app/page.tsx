@@ -217,7 +217,7 @@ export default function Home() {
           </h1>
           <motion.p
             className="text-xl md:text-2xl mb-12"
-            style={{ color: "hsl(215, 20.2%, 65.1%)" }}
+            style={{ color: "white" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
