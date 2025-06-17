@@ -426,7 +426,7 @@ export default function Home() {
                 }}
               >
                 <div className="lg:col-span-2 flex justify-center lg:justify-evenly mt-2 mb-4">
-                  <div className="relative w-64 h-64 group">
+                  <div className="relative w-52 h-40 group">
                     <div
                       className="absolute inset-0 rounded-2xl z-[-1]"
                       style={{
@@ -668,7 +668,9 @@ export default function Home() {
                       >
                         {job.company} | {job.period}
                       </p>
-                      <p>{job.description}</p>
+                      <p className="text-lg leading-relaxed text-gray-300">
+                        {job.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -774,6 +776,7 @@ export default function Home() {
                       border: "1px solid rgba(202, 5, 77, 0.2)",
                       backgroundColor: "rgba(34, 39, 55, 0.5)",
                       backdropFilter: "blur(8px)",
+                      borderRadius: "12px",
                     }}
                   >
                     <div style={{ position: "relative", overflow: "hidden" }}>
