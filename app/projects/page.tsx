@@ -16,6 +16,16 @@ const Particles = dynamic(
 );
 const projects = [
   {
+    title: "Word Cascade",
+    description: "Think fast, guess smart — crack the 4-letter code!",
+    image: "/wordCascade.png?height=300&width=400&text=Neon+Dreams",
+    tags: ["Next.js", "Javascript", "Python"],
+    links: {
+      github: "https://github.com/sowmya1066/word-cascade",
+      live: "https://word-cascade.vercel.app/",
+    },
+  },
+  {
     title: "Next Food",
     description:
       "A recipe-sharing platform built with Nextjs, where users can explore community and share their favorite recipes.",

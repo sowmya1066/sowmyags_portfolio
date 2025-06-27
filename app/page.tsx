@@ -717,7 +717,7 @@ export default function Home() {
                 {
                   title: "Word Cascade",
                   description:
-                    "A recipe-sharing platform built with Nextjs, where users can explore community and share their favorite recipes.",
+                    "Think fast, guess smart — crack the 4-letter code!",
                   image:
                     "/wordCascade.png?height=300&width=400&text=Neon+Dreams",
                   tags: ["Next.js", "Typescript", "Python"],
