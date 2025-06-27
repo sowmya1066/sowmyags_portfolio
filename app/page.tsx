@@ -715,6 +715,18 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
+                  title: "Word Cascade",
+                  description:
+                    "A recipe-sharing platform built with Nextjs, where users can explore community and share their favorite recipes.",
+                  image:
+                    "/wordCascade.png?height=300&width=400&text=Neon+Dreams",
+                  tags: ["Next.js", "Typescript", "Python"],
+                  links: {
+                    github: "https://github.com/sowmya1066/word-cascade",
+                    live: "https://word-cascade.vercel.app/",
+                  },
+                },
+                {
                   title: "Next Food",
                   description:
                     "A recipe-sharing platform built with Nextjs, where users can explore community and share their favorite recipes.",
