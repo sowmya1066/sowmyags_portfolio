@@ -22,6 +22,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import AboutMe from "../public/sowmya.png";
 import Image from "next/image";
 import { ChevronRightIcon } from "lucide-react";
+import EpicGameButton from "../components/wordCascade"
 
 // Dynamically import Particles to avoid SSR issues
 const Particles = dynamic(() => import("react-particles").then((mod) => mod.default), {
@@ -282,6 +283,7 @@ export default function Home() {
             </Link>
           </motion.div>
         </motion.div>
+        <EpicGameButton/>
         <motion.div
           className="flex space-x-6 mt-12 z-10"
           initial={{ opacity: 0 }}
